@@ -11,10 +11,9 @@ server.on('connection', function(client) {
         // Client requests image by reference
         stream.on('data', function(data){
 
-            console.log('got data:', data);
+            //console.log('got data:', data);
 
             if (data.requestImage) {
-
                 var whitelist = ['flower', 'space'];
                 var ref = data.requestImage;
 
@@ -22,6 +21,11 @@ server.on('connection', function(client) {
                     var file = getImageStream(ref);
                     client.send(file);
                 }
+            } else {
+                console.log('got blob');
+
+                var blob = new Buffer(data, "binary");
+                client.send(blob);
             }
         });
     });
