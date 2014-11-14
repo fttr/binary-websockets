@@ -2,7 +2,7 @@ var log = new Log();
 var time = 0;
 
 // Connect to Binary.js server
-var client = new BinaryClient('wss://agile-hollows-1346.herokuapp.com:5000');
+var client = new BinaryClient('wss://agile-hollows-1346.herokuapp.com');
 
 createEventListeners(client);
 
