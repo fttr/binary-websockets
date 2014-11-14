@@ -1,7 +1,17 @@
+var log = new Log();
+var time = 0;
+
 // Connect to Binary.js server
 var client = new BinaryClient('ws://localhost:9000');
+
+createEventListeners(client);
+
 // Received new stream from server!
-client.on('stream', function(stream, meta){
+client.on('stream', function(stream, meta) {
+
+    //console.time('x');
+    time = performance.now();
+
     // Buffer for parts
     var parts = [];
 
@@ -9,10 +19,16 @@ client.on('stream', function(stream, meta){
     stream.on('data', function(data){
         parts.push(data);
     });
+
     stream.on('end', function(){
+
+        var duration = (performance.now() - time).toFixed(2);
+        log.log(duration + ' ms');
+        //console.timeEnd('x');
+
         // Display new data in browser!
-        var img = document.createElement("img");
-        img.src = (window.URL || window.webkitURL).createObjectURL(new Blob(parts));
-        document.body.appendChild(img);
+        var output = document.getElementById('output-image');
+        output.src = (window.URL || window.webkitURL).createObjectURL(new Blob(parts));
     });
 });
+

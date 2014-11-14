@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="http://cdn.binaryjs.com/0/binary.js"></script>
-    <script src="client.js"></script>
+    <script src="../bower_components/binaryjs/dist/binary.js"></script>
+    <script src="../assets/log.js"></script>
+    <script src="upload.js"></script>
+
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-<div id="log" class="log">
+    <div id="output" class="output">
+        <img id="output-image" width="500">
+    </div>
 
-</div>
+    <div class="upload">
+        <div>
+            <h3>Upload Reference</h3>
+            <button class="upload-reference" data-id="flower">Flower</button>
+            <button class="upload-reference" data-id="space">Space</button>
+        </div>
+
+        <div>
+            <h3>Upload File</h3>
+            <input type="file" id="upload-file">
+            <button>Upload</button>
+        </div>
+    </div>
+
+    <ul id="logger" class="log">
+        <li>foo</li>
+        <li>bar</li>
+        <li>baz</li>
+    </ul>
 </body>
+<script src="client.js"></script>
 </html>

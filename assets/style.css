@@ -1,5 +1,32 @@
+body {
+    font-family: "Segoe UI", "Lucida Grande", Arial, Helvetica, sans-serif;
+}
+
+.upload {
+    float: right;
+    width: 30%;
+    padding: 10px;
+}
+
+.output {
+    display: inline-block;
+}
+
 .log {
     font-family: monospace;
-    width: 50%;
+    width: 30%;
+    list-style: none;
     border: 1px solid #ccc;
+    padding: 0;
+    float: right;
+}
+
+.log li {
+    border-bottom: 1px dotted #ccc;
+    border-top: 1px dotted #ccc;
+    margin-top: -1px;
+}
+
+.log li:last-child {
+    margin-bottom: -1px;
 }
