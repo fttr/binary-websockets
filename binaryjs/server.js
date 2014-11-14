@@ -1,7 +1,7 @@
 var BinaryServer = require('binaryjs').BinaryServer;
 var fs = require('fs');
 // Start Binary.js server
-var server = BinaryServer({port: 9000});
+var server = BinaryServer({port: 5000});
 
 // Wait for new user connections
 server.on('connection', function(client) {
