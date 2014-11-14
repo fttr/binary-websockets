@@ -1,0 +1,20 @@
+{
+  "name": "binary-websockets",
+  "version": "0.0.1",
+  "homepage": "https://github.com/fttr/binary-websockets",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "binaryjs": "~0.2.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "binary-websockets",
+  "version": "0.0.1",
+  "devDependencies": {
+    "binaryjs": "~0.2.1"
+  }
+}
