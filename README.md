@@ -1,4 +1,4 @@
 binary-websockets
 =================
 
-Prototype to send binary data via websockets
+Prototype to evaluate different methods of sending binary data via websockets
