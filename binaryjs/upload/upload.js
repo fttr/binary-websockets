@@ -52,5 +52,8 @@ function uploadReference(client, ref) {
  * @param blob
  */
 function uploadBlob(client, blob) {
-    client.send(blob);
+    client.send({
+        access_token: 'foo',
+        blob: blob
+    });
 }

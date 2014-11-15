@@ -21,17 +21,28 @@ server.on('connection', function(client) {
 
         stream.on('data', function(data){
 
-            // Client sends image as blob
+            if (data.access_token && data.blob) {
 
-            console.log('got blob');
+                if (data.access_token !== accessToken) {
+                    console.log('invalid access token');
+                    return;
+                }
 
-            var blob = new Buffer(data, "binary");
+                // Client sends image as blob
 
-            // Broadcast image to all connected clients
-            for (var client in clients) {
-                clients[client].send(blob);
+                console.log('got blob');
+
+                var blob = new Buffer(data, "binary");
+
+                // Broadcast image to all connected clients
+                for (var client in clients) {
+                    clients[client].send(blob);
+                }
+            } else {
+                console.log('invalid data format')
             }
         });
+
     });
 
     client.on('close', function () {
