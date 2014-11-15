@@ -32,7 +32,7 @@ server.on('connection', function(client) {
 
                 console.log('got blob');
 
-                var blob = new Buffer(data, "binary");
+                var blob = new Buffer(data.blob, "binary");
 
                 // Broadcast image to all connected clients
                 for (var client in clients) {
