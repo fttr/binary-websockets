@@ -4,8 +4,6 @@ var time = 0;
 // Connect to Binary.js server
 var client = new BinaryClient('wss://agile-hollows-1346.herokuapp.com');
 
-createEventListeners(client);
-
 // Received new stream from server!
 client.on('stream', function(stream, meta) {
 

@@ -3,6 +3,8 @@ var fs = require('fs');
 
 var clients = [];
 
+var accessToken = process.env.IP;
+
 // Start Binary.js server
 var server = BinaryServer({port: process.env.PORT});
 
