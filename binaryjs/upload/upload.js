@@ -53,7 +53,19 @@ function uploadReference(client, ref) {
  */
 function uploadBlob(client, blob) {
     client.send({
-        access_token: 'foo',
+        access_token: getUrlVars()['token'],
         blob: blob
     });
+}
+
+/**
+ * Get URL vars
+ * @returns {{}}
+ */
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
 }
